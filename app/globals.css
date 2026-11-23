@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+:root {
+  --paper: #f3efe7;
+  --paper-deep: #e7e0d2;
+  --sheet: #fbf9f5;
+  --ink: #1a1714;
+  --ink-soft: #3c372f;
+  --muted: #5f584f;
+  --line: #ddd4c6;
+  --copper: #7c2d12;
+  --copper-deep: #6b270f;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-deep: var(--paper-deep);
+  --color-sheet: var(--sheet);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-copper: var(--copper);
+  --color-copper-deep: var(--copper-deep);
+  --font-sans: var(--font-geist-sans);
+  --font-serif: var(--font-fraunces);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background:
+    radial-gradient(1200px 500px at 10% -10%, rgba(124, 45, 18, 0.05), transparent 55%),
+    var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans), sans-serif;
+}
+
+::selection {
+  background: #ead7cb;
+  color: var(--ink);
+}
+
+@keyframes word-progress {
+  0% {
+    transform: translateX(-130%);
+  }
+  100% {
+    transform: translateX(430%);
+  }
+}
+
+.progress-bar {
+  animation: word-progress 1.15s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
